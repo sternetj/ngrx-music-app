@@ -1,0 +1,6 @@
+<div *ngFor="let video of (videoList$ | async)" style="margin-bottom: 30px;">
+  <app-video-tile [video]="video"
+  (moveUp)="moveUp($event)"
+  (moveDown)="moveDown($event)"
+  (remove)="remove($event)"></app-video-tile>
+</div>

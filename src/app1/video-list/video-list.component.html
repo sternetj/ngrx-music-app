@@ -1,0 +1,3 @@
+<div *ngFor="let video of (videoList$ | async)" style="margin-bottom: 30px;">
+  <app-video-tile [video]="video"></app-video-tile>
+</div>

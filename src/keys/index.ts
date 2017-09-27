@@ -1,6 +1,6 @@
-const devKeys = require("./key.dev");
+const devKeys = require('./key.dev') || {};
 
 export const keys = {
     apiKey: '',
-    ...devKeys,
-}
+    ...devKeys.keys,
+};

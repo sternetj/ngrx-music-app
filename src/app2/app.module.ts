@@ -4,13 +4,17 @@ import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
 import { MaterialModule, MdInputModule } from '@angular/material';
 
+import { EffectsModule } from '@ngrx/effects';
+import { StoreModule } from '@ngrx/store';
+
 import { AppComponent } from './app.component';
 import { SearchComponent } from './search/search.component';
 import { VideoListComponent } from './video-list/video-list.component';
 import { SearchService } from './services/search.service';
-import { VideoService } from './services/video.service';
 import { VideoTileComponent } from './video-list/video-tile/video-tile.component';
 import { ListCountComponent } from './list-count/list-count.component';
+
+import { effects, reducers } from './state';
 
 @NgModule({
   declarations: [
@@ -25,12 +29,10 @@ import { ListCountComponent } from './list-count/list-count.component';
     FormsModule,
     HttpModule,
     MaterialModule,
-    MdInputModule
+    StoreModule.forRoot('app', reducers),
+    EffectsModule.forRoot(effects),
   ],
-  providers: [
-    VideoService,
-    SearchService
-  ],
+  providers: [SearchService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,12 @@
+<md-card style="width: 900px; height: 100px; position: relative;" class="tile">
+  <img [src]="video.snippet.thumbnails.default.url" style="position: absolute; left: 20px; width: 120px; height: 100px;" />
+  <div style="position: absolute; left: 160px; width: 670px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; display: block;">
+    <h1>{{video.snippet.title}}</h1>
+    <p style="color: rgba(0,0,0,0.8)">{{video.snippet.description}}</p>
+  </div>
+  <p style="position: absolute; width: 50px; right: 40px; top: 0px">
+    <button md-button (click)="moveUp.emit(video)"><md-icon>keyboard_arrow_up</md-icon></button>
+    <button md-button (click)="moveDown.emit(video)"><md-icon>keyboard_arrow_down</md-icon></button>
+    <button md-button (click)="remove.emit(video)"><md-icon>delete</md-icon></button>
+  </p>
+</md-card>
