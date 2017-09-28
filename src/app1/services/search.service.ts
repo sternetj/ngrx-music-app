@@ -33,11 +33,6 @@ export class SearchService {
     const url = `${base}/search?part=snippet&key=${keys.apiKey}&maxResults=1&topicId=/m/04rlf&q=${query}`;
     return this.http.get(url)
         .map(res => res.json() as SearchResult)
-        .map((res) => res.items[0])
-        .switchMap((res) => {
-          return this.http.get(`${base}/videos?part=snippet,contentDetails&key=${keys.apiKey}&maxResults=1&id=${res.id.videoId}`);
-        })
-        .map((res) => res.json())
         .map((res) => res.items[0]);
   }
 
