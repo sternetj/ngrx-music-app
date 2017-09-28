@@ -9,6 +9,7 @@ import { Video } from '../../models/video';
 import * as Videos from './videos.actions';
 
 import 'rxjs/add/observable/of';
+import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/exhaustMap';
 
 import { Observable } from 'rxjs/Observable';

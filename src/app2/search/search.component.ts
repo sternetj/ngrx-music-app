@@ -1,5 +1,4 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
-import { SearchService } from '../services/search.service';
 import { AppState } from '../state';
 import { Store } from '@ngrx/store';
 
@@ -12,8 +11,7 @@ import * as videos from '../state/videos/videos.actions';
 })
 export class SearchComponent {
   public searchTerm = '';
-  constructor(private searchService: SearchService,
-    private store: Store<AppState>) { }
+  constructor(private store: Store<AppState>) { }
 
   public addVideo() {
     this.store.dispatch(new videos.Add(this.searchTerm.split(' ')));

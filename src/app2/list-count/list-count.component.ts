@@ -3,7 +3,6 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { Store } from '@ngrx/store';
 import { AppState, selectVideos } from '../state';
-import doCheck from '../utils/do-check';
 
 @Component({
   selector: 'app-list-count',

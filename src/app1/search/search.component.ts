@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SearchService } from '../services/search.service';
 import { VideoService } from '../services/video.service';
-import doCheck from '../../app2/utils/do-check';
 
 @Component({
   selector: 'app-search',
