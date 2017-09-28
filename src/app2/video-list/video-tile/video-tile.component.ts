@@ -4,7 +4,6 @@ import { Video } from '../../models/video';
 @Component({
   selector: 'app-video-tile',
   templateUrl: './video-tile.component.html',
-  styleUrls: ['./video-tile.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class VideoTileComponent {

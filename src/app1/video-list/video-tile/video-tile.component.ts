@@ -4,8 +4,7 @@ import { VideoService } from '../../services/video.service';
 
 @Component({
   selector: 'app-video-tile',
-  templateUrl: './video-tile.component.html',
-  styleUrls: ['./video-tile.component.css']
+  templateUrl: './video-tile.component.html'
 })
 export class VideoTileComponent {
   @Input() public video: Video;

@@ -8,7 +8,6 @@ import * as videos from '../state/videos/videos.actions';
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
-  styleUrls: ['./search.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SearchComponent {

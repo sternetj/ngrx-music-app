@@ -5,8 +5,7 @@ import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'app-video-list',
-  templateUrl: './video-list.component.html',
-  styleUrls: ['./video-list.component.css']
+  templateUrl: './video-list.component.html'
 })
 export class VideoListComponent {
   videoList$: Observable<any[]>;

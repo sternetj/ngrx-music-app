@@ -7,8 +7,7 @@ import doCheck from '../utils/do-check';
 
 @Component({
   selector: 'app-list-count',
-  templateUrl: './list-count.component.html',
-  styleUrls: ['./list-count.component.css']
+  templateUrl: './list-count.component.html'
 })
 export class ListCountComponent implements OnInit {
   public videoCount$: Observable<number>;

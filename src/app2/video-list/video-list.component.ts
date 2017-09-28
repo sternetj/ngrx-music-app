@@ -9,8 +9,7 @@ import * as Videos from '../state/videos/videos.actions';
 
 @Component({
   selector: 'app-video-list',
-  templateUrl: './video-list.component.html',
-  styleUrls: ['./video-list.component.css']
+  templateUrl: './video-list.component.html'
 })
 export class VideoListComponent implements OnInit {
   public videoList$: Observable<Video[]>;

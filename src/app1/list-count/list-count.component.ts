@@ -7,8 +7,7 @@ import doCheck from '../../app2/utils/do-check';
 
 @Component({
   selector: 'app-list-count',
-  templateUrl: './list-count.component.html',
-  styleUrls: ['./list-count.component.css']
+  templateUrl: './list-count.component.html'
 })
 export class ListCountComponent {
   public videoList$: Observable<Video[]>;
