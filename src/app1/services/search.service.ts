@@ -10,7 +10,7 @@ import { Video } from '../models/video';
 import { SearchResult } from '../models/search-result';
 import { Observable } from 'rxjs/Observable';
 
-const base = 'https://www.googleapis.com/youtube/v3'
+const base = 'https://www.googleapis.com/youtube/v3';
 
 @Injectable()
 export class SearchService {

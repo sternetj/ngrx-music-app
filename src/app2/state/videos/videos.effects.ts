@@ -18,13 +18,13 @@ export class VideosEffects {
 
   @Effect()
   executeVideos = this.actions$
-                      .ofType(Videos.VIDEOS_INIT)
-                      .map((action: Videos.VideosInit) => action.payload)
+                      .ofType(Videos.VIDEOS_ADD)
+                      .map((action: Videos.Add) => action.payload)
                       .exhaustMap((query: string[]) => {
                         return this.searchService
                                    .search(query.join(','))
-                                   .map((video) => new Videos.VideosComplete(video))
-                                   .catch(() => Observable.of(new Videos.VideosComplete(null)));
+                                   .map((video) => new Videos.AddComplete(video))
+                                   .catch(() => Observable.of(new Videos.AddComplete(null)));
                       });
 
   constructor(private actions$: Actions,

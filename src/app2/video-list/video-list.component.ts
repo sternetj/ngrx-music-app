@@ -5,7 +5,7 @@ import { Store } from '@ngrx/store';
 import { AppState, selectVideos } from '../state';
 import { Video } from '../models/video';
 
-import * as videos from '../state/videos/videos.actions';
+import * as Videos from '../state/videos/videos.actions';
 
 @Component({
   selector: 'app-video-list',
@@ -22,14 +22,14 @@ export class VideoListComponent implements OnInit {
   }
 
   moveUp(video: Video) {
-
+    this.store.dispatch(new Videos.MoveUp(video));
   }
 
   moveDown(video: Video) {
-
+    this.store.dispatch(new Videos.MoveDown(video));
   }
 
   remove(video: Video) {
-    // this.store.dispatch
+    this.store.dispatch(new Videos.Remove(video));
   }
 }

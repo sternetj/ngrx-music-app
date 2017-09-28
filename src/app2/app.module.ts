@@ -16,6 +16,8 @@ import { ListCountComponent } from './list-count/list-count.component';
 
 import { effects, reducers } from './state';
 
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,8 +31,11 @@ import { effects, reducers } from './state';
     FormsModule,
     HttpModule,
     MaterialModule,
-    StoreModule.forRoot('app', reducers),
+    StoreModule.forRoot(reducers),
     EffectsModule.forRoot(effects),
+    StoreDevtoolsModule.instrument({
+      maxAge: 25,
+    }),
   ],
   providers: [SearchService],
   bootstrap: [AppComponent]

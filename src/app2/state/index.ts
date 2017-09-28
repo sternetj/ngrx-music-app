@@ -17,11 +17,5 @@ export const effects = [
     videosEffects.VideosEffects,
 ];
 
-export const selectApp = createFeatureSelector<AppState>('app');
-export const selectVideos = createSelector(selectApp, (state: AppState) => state.videos.videos);
-// export const selectFirstSearch = createSelector(selectCdos, (state: AppState) => state.search.searched);
-// export const selectQuery = createSelector(selectCdos, (state: AppState) => state.search.query);
-// export const selectValid = createSelector(selectCdos, (state: AppState) => state.search.valid);
-// export const selectDocument = createSelector(selectCdos, (state: AppState) => state.document.document);
-// export const selectFilters = createSelector(selectCdos, (state: AppState) => state.filter.filters);
-// export const selectDisplay = createSelector(selectCdos, (state: AppState) => state.display);
+export const selectApp = createFeatureSelector<videosReducer.State>('videos');
+export const selectVideos = createSelector(selectApp, (state: videosReducer.State) => state.videos);

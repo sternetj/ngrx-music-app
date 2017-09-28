@@ -11,20 +11,43 @@ export const defaultState: State = {
 
 export function reducer(state = defaultState, action: videos.Actions): State {
   switch (action.type) {
-    // case search.SEARCH_UPDATE: {
-    //   const queries = action.payload.split(/\s+/).map((query) => query.trim());
-    //   const reg = /^[A-Za-z0-9]{2,}$/;
-
-    //   return {
-    //     ...state,
-    //     query: action.payload,
-    //     valid: queries.every((query) => reg.test(query)),
-    //   };
-    // }
-    case videos.VIDEOS_COMPLETE: {
+    case videos.VIDEOS_ADD_COMPLETE: {
       return {
-        ...state,
         videos: [...state.videos, action.payload]
+      };
+    }
+    case videos.VIDEOS_MOVE_UP: {
+      const toMoveIndex = state.videos.indexOf(action.payload);
+      if (toMoveIndex < 1) {
+        return state;
+      }
+
+      state.videos.splice(toMoveIndex, 1);
+      state.videos.splice(toMoveIndex - 1, 0, action.payload);
+
+      return {
+        videos: [...state.videos]
+      };
+    }
+    case videos.VIDEOS_MOVE_DOWN: {
+      const toMoveIndex = state.videos.indexOf(action.payload);
+      if (toMoveIndex === -1 || toMoveIndex === state.videos.length) {
+        return state;
+      }
+
+      state.videos.splice(toMoveIndex, 1);
+      state.videos.splice(toMoveIndex + 1, 0, action.payload);
+
+      return {
+        videos: [...state.videos]
+      };
+    }
+    case videos.VIDEOS_REMOVE: {
+      const toMoveIndex = state.videos.indexOf(action.payload);
+      state.videos.splice(toMoveIndex, 1);
+
+      return {
+        videos: [...state.videos]
       };
     }
     default: {

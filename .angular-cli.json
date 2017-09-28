@@ -5,6 +5,7 @@
   },
   "apps": [
     {
+      "name": "svc-app",
       "root": "src",
       "outDir": "dist",
       "assets": [
@@ -30,6 +31,7 @@
       }
     },
     {
+      "name": "ngrx-app",
       "root": "src",
       "outDir": "dist",
       "assets": [

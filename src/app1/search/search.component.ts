@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SearchService } from '../services/search.service';
 import { VideoService } from '../services/video.service';
+import doCheck from '../../app2/utils/do-check';
 
 @Component({
   selector: 'app-search',
@@ -10,7 +11,7 @@ import { VideoService } from '../services/video.service';
 export class SearchComponent {
   public searchTerm = '';
   constructor(private searchService: SearchService,
-              private videoService: VideoService) { }
+    private videoService: VideoService) { }
 
   addVideo() {
     this.searchService.search(this.searchTerm.split(' ').join(',')).subscribe((video) => {
